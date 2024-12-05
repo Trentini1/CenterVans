@@ -18,69 +18,78 @@
             --cinza-claro: #f2f2f2;
         }
 
-        /* Imagem de fundo fixa */
+        /* Corpo */
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background: url('fundo.png') no-repeat center center fixed;
             background-size: cover;
             color: var(--branco);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            z-index: 10;
-        }
-
-        .navbar-content {
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
         }
 
         .navbar a {
             color: var(--laranja-escuro);
             text-decoration: none;
-            padding: 15px 20px;
-            margin: 0 10px;
-            font-size: 1.2em;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            transition: color 0.3s ease;
         }
 
         .navbar a:hover {
-            background-color: rgba(255, 102, 0, 0.3);
             color: var(--branco);
         }
 
-        /* Seção de Cabeçalho */
+        .navbar img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        /* Cabeçalho */
         .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             text-align: center;
-            padding: 120px 20px 80px;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.6);
         }
 
         .header h1 {
             font-size: 3em;
             color: var(--laranja-escuro);
+            margin-bottom: 10px;
         }
 
         .header p {
-            font-size: 1.2em;
-            margin-top: 10px;
+            font-size: 1.1em;
+            color: var(--branco);
         }
 
         /* Seção de Serviços */
         .services {
-            text-align: center;
             padding: 60px 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            margin-top: 50px;
             border-radius: 10px;
         }
 
@@ -92,26 +101,29 @@
 
         .service-items {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-evenly;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .service-item {
             background-color: var(--cinza-claro);
             color: var(--preto);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 8px;
             width: calc(33% - 40px);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .service-item:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px);
+            background-color: var(--laranja-claro);
         }
 
         .service-item h3 {
+            font-size: 1.2em;
             color: var(--laranja-escuro);
             margin-bottom: 10px;
         }
@@ -128,11 +140,11 @@
 
         /* Seção de Localização */
         .location {
-            padding: 60px 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
             color: var(--branco);
-            margin: 20px;
+            text-align: center;
+            margin: 50px 20px;
             border-radius: 10px;
         }
 
@@ -142,15 +154,22 @@
             margin-bottom: 20px;
         }
 
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+        }
+
         /* Ícones fixos */
         .whatsapp-icon, .instagram-icon {
             position: fixed;
             bottom: 20px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background-size: cover;
-            z-index: 100;
             transition: transform 0.3s;
+            z-index: 100;
         }
 
         .whatsapp-icon {
@@ -159,7 +178,7 @@
         }
 
         .instagram-icon {
-            right: 100px;
+            right: 90px;
             background-image: url('instagram.png');
         }
 
@@ -188,7 +207,8 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="navbar-content">
+        <img src="logo.png" alt="Center Vans Logo">
+        <div class="navbar-links">
             <a href="#sobre">Sobre</a>
             <a href="#servicos">Serviços</a>
             <a href="#localizacao">Localização</a>
@@ -207,43 +227,37 @@
         <div class="service-items">
             <div class="service-item">
                 <h3>Manutenção Preventiva</h3>
-                <p>Realizamos inspeções e trocas de peças preventivas para garantir a durabilidade do seu veículo.</p>
+                <p>Inspeções e trocas de peças para garantir a durabilidade do seu veículo.</p>
             </div>
             <div class="service-item">
                 <h3>Reparos Mecânicos</h3>
-                <p>Consertamos qualquer defeito mecânico em sua van ou carro, com a mais alta qualidade e agilidade.</p>
+                <p>Consertos rápidos e de qualidade para sua van ou carro.</p>
             </div>
             <div class="service-item">
                 <h3>Troca de Óleo e Filtros</h3>
-                <p>Realizamos a troca de óleo e filtros com produtos de alta qualidade para o bom funcionamento do motor.</p>
+                <p>Troca de óleo e filtros com produtos de alta qualidade.</p>
             </div>
         </div>
     </section>
 
     <!-- Seção de Localização -->
     <section class="location" id="localizacao">
-        <h2>Localização</h2>
-        <p>Estamos localizados em Curitiba, com fácil acesso e estacionamento disponível.</p>
+        <h2>Onde Estamos</h2>
         <p><strong>Endereço:</strong> Rua das Vans, 123, Centro, Curitiba - PR</p>
         <p>Aberto de segunda a sexta, das 8h às 18h.</p>
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6256445577656!2d-49.33013892453429!3d-25.48417287752735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3000d81f943%3A0x88a82db7fd87f7e7!2sCenter%20vans%20Nota%2010!5e0!3m2!1spt-BR!2sbr!4v1733406252922!5m2!1spt-BR!2sbr" 
-                width="100%" 
-                height="400" 
-                style="border:0;" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6256445577656!2d-49.33013892453429!3d-25.48417287752735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3000d81f943%3A0x88a82db7fd87f7e7!2sCenter%20vans%20Nota%2010!5e0!3m2!1spt-BR!2sbr!4v1733406252922!5m2!1spt-BR!2sbr" 
                 allowfullscreen="" 
                 loading="lazy">
             </iframe>
-        </div>
     </section>
 
     <!-- Ícones -->
-    <a href="https://wa.me/5541997055934" target="_blank" class="whatsapp-icon"></a>
-    <a href="https://www.instagram.com/geovani_trentini?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-icon"></a>
+    <a href="https://wa.me/5541997055934" class="whatsapp-icon" target="_blank"></a>
+    <a href="https://www.instagram.com/geovani_trentini" class="instagram-icon" target="_blank"></a>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Center Vans - Todos os direitos reservados. <br>Desenvolvido por <a href="https://www.instagram.com/trentini__37/" target="_blank">Trentini</a></p>
+        <p>&copy; 2024 Center Vans. Todos os direitos reservados. <br>Desenvolvido por <a href="https://www.instagram.com/geovani_trentini" target="_blank">Trentini</a></p>
     </footer>
 </body>
 </html>
