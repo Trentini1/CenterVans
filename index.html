@@ -9,12 +9,13 @@
     <meta name="keywords" content="mecânica, vans, Sprinter, Master, carros, manutenção de vans, serviços mecânicos">
     <meta name="robots" content="index, follow">
     <style>
-        /* Definir a paleta de cores */
+        /* Paleta de cores */
         :root {
             --preto: #000000;
             --branco: #ffffff;
             --laranja-escuro: #FF6600;
             --laranja-claro: #FF7F00;
+            --cinza-claro: #f2f2f2;
         }
 
         /* Imagem de fundo fixa */
@@ -22,9 +23,9 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: url('fundo.png') no-repeat center center fixed; /* imagem de fundo */
+            background: url('fundo.png') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
+            color: var(--branco);
         }
 
         /* Navbar */
@@ -32,7 +33,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Transparência no fundo */
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 10px 0;
             z-index: 10;
         }
@@ -56,23 +57,92 @@
             color: var(--branco);
         }
 
-        /* Seção de Conteúdo */
-        .content {
-            padding: 100px 20px;
+        /* Seção de Cabeçalho */
+        .header {
             text-align: center;
+            padding: 120px 20px 80px;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
         }
 
-        .content h1 {
-            font-size: 2.5em;
+        .header h1 {
+            font-size: 3em;
             color: var(--laranja-escuro);
         }
 
-        .content p {
+        .header p {
             font-size: 1.2em;
-            color: var(--branco);
+            margin-top: 10px;
         }
 
-        /* Ícones do WhatsApp e Instagram */
+        /* Seção de Serviços */
+        .services {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            color: var(--laranja-escuro);
+            margin-bottom: 20px;
+        }
+
+        .service-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: var(--cinza-claro);
+            color: var(--preto);
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(33% - 40px);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
+        .service-item h3 {
+            color: var(--laranja-escuro);
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                width: 100%;
+            }
+        }
+
+        /* Seção de Localização */
+        .location {
+            padding: 60px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            color: var(--branco);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .location h2 {
+            font-size: 2em;
+            color: var(--laranja-escuro);
+            margin-bottom: 20px;
+        }
+
+        /* Ícones fixos */
         .whatsapp-icon, .instagram-icon {
             position: fixed;
             bottom: 20px;
@@ -88,34 +158,21 @@
             background-image: url('watzap.png');
         }
 
-        .whatsapp-icon:hover {
-            transform: scale(1.1);
-        }
-
         .instagram-icon {
             right: 100px;
             background-image: url('instagram.png');
         }
 
-        .instagram-icon:hover {
+        .whatsapp-icon:hover, .instagram-icon:hover {
             transform: scale(1.1);
         }
 
         /* Rodapé */
         footer {
             background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
+            color: var(--branco);
             padding: 20px;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
             text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1em;
         }
 
         footer a {
@@ -126,7 +183,6 @@
         footer a:hover {
             text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
@@ -135,23 +191,59 @@
         <div class="navbar-content">
             <a href="#sobre">Sobre</a>
             <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
+            <a href="#localizacao">Localização</a>
         </div>
     </nav>
 
-    <!-- Seção Principal -->
-    <section class="content">
+    <!-- Cabeçalho -->
+    <header class="header" id="sobre">
         <h1>Bem-vindo ao Center Vans</h1>
-        <p>Especialistas em mecânica para Vans e carros em geral. Sprinter, Master e muito mais.</p>
+        <p>Especialistas em mecânica para Vans Sprinter, Master e carros em geral.</p>
+    </header>
+
+    <!-- Seção de Serviços -->
+    <section class="services" id="servicos">
+        <h2>Serviços</h2>
+        <div class="service-items">
+            <div class="service-item">
+                <h3>Manutenção Preventiva</h3>
+                <p>Realizamos inspeções e trocas de peças preventivas para garantir a durabilidade do seu veículo.</p>
+            </div>
+            <div class="service-item">
+                <h3>Reparos Mecânicos</h3>
+                <p>Consertamos qualquer defeito mecânico em sua van ou carro, com a mais alta qualidade e agilidade.</p>
+            </div>
+            <div class="service-item">
+                <h3>Troca de Óleo e Filtros</h3>
+                <p>Realizamos a troca de óleo e filtros com produtos de alta qualidade para o bom funcionamento do motor.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Ícones do WhatsApp e Instagram -->
+    <!-- Seção de Localização -->
+    <section class="location" id="localizacao">
+        <h2>Localização</h2>
+        <p>Estamos localizados em Curitiba, com fácil acesso e estacionamento disponível.</p>
+        <p><strong>Endereço:</strong> Rua das Vans, 123, Centro, Curitiba - PR</p>
+        <p>Aberto de segunda a sexta, das 8h às 18h.</p>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6256445577656!2d-49.33013892453429!3d-25.48417287752735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3000d81f943%3A0x88a82db7fd87f7e7!2sCenter%20vans%20Nota%2010!5e0!3m2!1spt-BR!2sbr!4v1733406252922!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Ícones -->
     <a href="https://wa.me/5541997055934" target="_blank" class="whatsapp-icon"></a>
     <a href="https://www.instagram.com/geovani_trentini?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-icon"></a>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Center Vans - Todos os direitos reservados. <br>Desenvolvido por <a href="https://www.instagram.com/geovani_trentini" target="_blank">Trentini</a></p>
+        <p>&copy; 2024 Center Vans - Todos os direitos reservados. <br>Desenvolvido por <a href="https://www.instagram.com/trentini__37/" target="_blank">Trentini</a></p>
     </footer>
 </body>
 </html>
