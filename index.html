@@ -3,43 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Center Vans - Mecânica Geral de Vans e Carros</title>
-    <link rel="icon" href="mini-logo.png" type="image/png">
-    <meta name="description" content="Oficina especializada em mecânica geral de Vans e Carros. Atendimento de qualidade e rápido para Sprinter, Master e veículos em geral.">
-    <meta name="keywords" content="mecânica geral, mecânica de vans, oficina, reparos, Sprinter, Master, carros em geral, mecânico, manutenção de veículos, manutenção preventiva, diagnóstico, oficina em Curitiba, serviços automotivos, Center Vans">
+    <title>Center Vans - Mecânica Especializada</title>
+    <link rel="icon" href="fundo.png" type="image/png">
+    <meta name="description" content="Center Vans - Mecânica especializada em Vans e carros em geral. Atendimento para Sprinter, Master e muito mais.">
+    <meta name="keywords" content="mecânica, vans, Sprinter, Master, carros, manutenção de vans, serviços mecânicos">
     <meta name="robots" content="index, follow">
-
-    <!-- Fontes Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
-        /* Paleta de cores */
+        /* Definir a paleta de cores */
         :root {
-            --preto: #212121;
-            --branco: #FFFFFF;
-            --laranja: #FF5722;
-            --laranja-claro: #FF7043;
-            --cinza-claro: #F5F5F5;
-            --cinza-escuro: #333333;
+            --preto: #000000;
+            --branco: #ffffff;
+            --laranja-escuro: #FF6600;
+            --laranja-claro: #FF7F00;
         }
 
-        /* Resetando margens e padding */
-        body, h1, h2, h3, p {
+        /* Imagem de fundo fixa */
+        body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        /* Fundo do site */
-        body {
-            background-color: var(--cinza-claro);
-            color: var(--preto);
-            background: url('fundo-site.png') no-repeat center center fixed;
+            font-family: Arial, sans-serif;
+            background: url('fundo.png') no-repeat center center fixed; /* imagem de fundo */
             background-size: cover;
-            font-size: 16px;
-            line-height: 1.5;
-            overflow-x: hidden;
-            transition: all 0.3s ease;
+            color: #fff;
         }
 
         /* Navbar */
@@ -47,247 +32,126 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: var(--preto);
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.8); /* Transparência no fundo */
+            padding: 10px 0;
             z-index: 10;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: center;
         }
 
         .navbar a {
-            color: var(--branco);
+            color: var(--laranja-escuro);
             text-decoration: none;
-            padding: 10px 25px;
-            display: inline-block;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease, color 0.3s ease;
+            padding: 15px 20px;
+            margin: 0 10px;
+            font-size: 1.2em;
+            border-radius: 5px;
         }
 
         .navbar a:hover {
-            color: var(--laranja);
-            transform: translateY(-5px);
-        }
-
-        /* Cabeçalho */
-        .header-compact {
-            margin-top: 80px;
-            padding: 60px 20px;
-            text-align: center;
-            background-color: rgba(33, 33, 33, 0.7);
+            background-color: rgba(255, 102, 0, 0.3);
             color: var(--branco);
-            backdrop-filter: blur(10px);
         }
 
-        .header-compact img {
-            max-width: 300px;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-out;
+        /* Seção de Conteúdo */
+        .content {
+            padding: 100px 20px;
+            text-align: center;
         }
 
-        .header-compact h1 {
-            color: var(--laranja);
+        .content h1 {
             font-size: 2.5em;
-            animation: slideUp 1s ease-out;
+            color: var(--laranja-escuro);
         }
 
-        .header-compact p {
+        .content p {
             font-size: 1.2em;
             color: var(--branco);
-            margin-top: 10px;
         }
 
-        /* Efeitos de animação */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Seção de Serviços */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .service-item {
-            background-color: var(--branco);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-in-out forwards;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-item h3 {
-            color: var(--laranja);
-            margin-bottom: 20px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5em;
-        }
-
-        .service-item p {
-            color: var(--preto);
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Seção de Localização */
-        .localizacao {
-            background-color: var(--laranja-claro);
-            color: var(--branco);
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .localizacao h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: var(--preto);
-        }
-
-        .localizacao p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-
-        .localizacao .mapa {
-            margin-top: 30px;
-        }
-
-        /* Ícone WhatsApp */
-        .whatsapp-icon {
+        /* Ícones do WhatsApp e Instagram */
+        .whatsapp-icon, .instagram-icon {
             position: fixed;
             bottom: 20px;
-            right: 20px;
-            width: 70px;
-            height: 70px;
-            background-image: url('whatsapp-logo.png');
+            width: 60px;
+            height: 60px;
             background-size: cover;
-            cursor: pointer;
-            animation: pulse 1.5s infinite;
-            z-index: 99;
+            z-index: 100;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-icon {
+            right: 20px;
+            background-image: url('watzap.png');
         }
 
         .whatsapp-icon:hover {
             transform: scale(1.1);
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .instagram-icon {
+            right: 100px;
+            background-image: url('instagram.png');
+        }
+
+        .instagram-icon:hover {
+            transform: scale(1.1);
         }
 
         /* Rodapé */
-        .footer {
-            background-color: var(--preto);
-            color: var(--branco);
-            padding: 30px 0;
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
             text-align: center;
-            font-size: 1.2em;
         }
 
-        .footer a {
-            color: var(--branco);
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: var(--laranja-escuro);
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
         }
 
-        .footer a:hover {
-            color: var(--laranja);
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .navbar a {
-                padding: 10px 15px;
-                font-size: 1em;
-            }
-
-            .services {
-                grid-template-columns: 1fr;
-            }
-
-            .service-item {
-                margin-top: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="#home">Página Inicial</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#localizacao">Localização</a>
-        <a href="#contato">Contato</a>
+        <div class="navbar-content">
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </div>
     </nav>
 
-    <!-- Cabeçalho -->
-    <header class="header-compact">
-        <img src="logo-center-vans.png" alt="Logo Center Vans">
-        <h1>Bem-vindo à Center Vans</h1>
-        <p>Especialistas em mecânica geral de Vans Sprinter, Master e carros em geral.</p>
-    </header>
-
-    <!-- Seção de Serviços -->
-    <section id="servicos" class="services">
-        <div class="service-item">
-            <h3>Manutenção Preventiva</h3>
-            <p>Realizamos inspeções e trocas de peças preventivas para garantir a durabilidade do seu veículo.</p>
-        </div>
-        <div class="service-item">
-            <h3>Reparos Mecânicos</h3>
-            <p>Consertamos qualquer defeito mecânico em sua van ou carro, com a mais alta qualidade e agilidade.</p>
-        </div>
-        <div class="service-item">
-            <h3>Troca de Óleo e Filtros</h3>
-            <p>Realizamos a troca de óleo e filtros com produtos de alta qualidade para o bom funcionamento do seu motor.</p>
-        </div>
+    <!-- Seção Principal -->
+    <section class="content">
+        <h1>Bem-vindo ao Center Vans</h1>
+        <p>Especialistas em mecânica para Vans e carros em geral. Sprinter, Master e muito mais.</p>
     </section>
 
-    <!-- Seção de Localização -->
-    <section id="localizacao" class="localizacao">
-        <h2>Visite-nos</h2>
-        <p>Estamos localizados em Curitiba, com fácil acesso e estacionamento disponível.</p>
-        <p><strong>Endereço:</strong> Av. Frederico Lambertucci, 616 - Fazendinha, Curitiba - PR, 81020-490</p>
-        <p>Aberto de segunda a sexta, das 8h às 18h.</p>
-        <div class="mapa">
-            <!-- Google Maps Embed -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6256445577656!2d-49.33013892453429!3d-25.48417287752735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce3000d81f943%3A0x88a82db7fd87f7e7!2sCenter%20vans%20Nota%2010!5e0!3m2!1spt-BR!2sbr!4v1733406252922!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <!-- WhatsApp Icon -->
-    <div class="whatsapp-icon" onclick="window.location.href='https://wa.me/41997055934'"></div>
+    <!-- Ícones do WhatsApp e Instagram -->
+    <a href="https://wa.me/5541997055934" target="_blank" class="whatsapp-icon"></a>
+    <a href="https://www.instagram.com/geovani_trentini?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-icon"></a>
 
     <!-- Rodapé -->
-    <footer class="footer">
-        <p>&copy; 2024 Center Vans | Todos os direitos reservados</p>
-        <a href="https://www.instagram.com/geovani_trentini">Instagram</a>
+    <footer>
+        <p>&copy; 2024 Center Vans - Todos os direitos reservados. <br>Desenvolvido por <a href="https://www.instagram.com/geovani_trentini" target="_blank">Trentini</a></p>
     </footer>
-
 </body>
 </html>
