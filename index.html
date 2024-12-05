@@ -162,29 +162,26 @@
         }
 
         /* Ícones fixos */
-        .whatsapp-icon, .instagram-icon {
-            position: fixed;
-            bottom: 20px;
-            width: 50px;
-            height: 50px;
-            background-size: cover;
-            transition: transform 0.3s;
-            z-index: 100;
-        }
+       .icons-container {
+    display: flex;
+    flex-direction: column;  /* Faz os ícones ficarem na vertical */
+    align-items: center;  /* Centraliza os ícones horizontalmente */
+    gap: 10px;  /* Espaçamento entre os ícones */
+}
 
-        .whatsapp-icon {
-            right: 20px;
-            background-image: url('watzap.png');
-        }
+.whatsapp-icon, .instagram-icon {
+    width: 50px;  /* Ajuste o tamanho do ícone conforme necessário */
+    height: 50px;
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
 
-        .instagram-icon {
-            right: 90px;
-            background-image: url('instagram.png');
-        }
+.whatsapp-icon:hover, .instagram-icon:hover {
+    transform: scale(1.1);  /* Efeito de zoom ao passar o mouse */
+}
 
-        .whatsapp-icon:hover, .instagram-icon:hover {
-            transform: scale(1.1);
-        }
 
         /* Rodapé */
         footer {
@@ -252,8 +249,14 @@
     </section>
 
     <!-- Ícones -->
-    <a href="https://wa.me/5541997055934" class="whatsapp-icon" target="_blank"></a>
-    <a href="https://www.instagram.com/geovani_trentini" class="instagram-icon" target="_blank"></a>
+    <div class="icons-container">
+    <a href="https://wa.me/41997055934" target="_blank">
+        <div class="whatsapp-icon" style="background-image: url('watzap.png');"></div>
+    </a>
+    <a href="https://www.instagram.com/geovani_trentini" target="_blank">
+        <div class="instagram-icon" style="background-image: url('instagram.png');"></div>
+    </a>
+</div>
 
     <!-- Rodapé -->
     <footer>
